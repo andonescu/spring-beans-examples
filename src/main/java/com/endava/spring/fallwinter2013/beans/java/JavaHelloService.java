@@ -1,8 +1,6 @@
 package com.endava.spring.fallwinter2013.beans.java;
 
-import org.springframework.stereotype.Component;
-
-@Component
+//@Component
 public class JavaHelloService {
 
 

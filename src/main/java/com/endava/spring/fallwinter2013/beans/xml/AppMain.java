@@ -17,5 +17,15 @@ public class AppMain {
         XmlHelloService helloService = context.getBean(XmlHelloService.class);
 
         System.out.println(helloService.sayHello());
+
+
+        ClientService clientService = context.getBean(ClientService.class);
+        System.out.println(clientService);
+
+        ProducerService producerService = context.getBean(ProducerService.class);
+        System.out.println(producerService);
+
+        DefaultServiceLocator serviceLocator = context.getBean(DefaultServiceLocator.class);
+        System.out.println(serviceLocator);
     }
 }

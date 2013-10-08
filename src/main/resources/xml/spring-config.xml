@@ -4,7 +4,20 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:annotation-config/>
-    <context:component-scan base-package="com.endava.spring.fallwinter2013.beans.xml"/>
+    <!--<context:component-scan base-package="com.endava.spring.fallwinter2013.beans.xml"/>-->
 
 
+    <!--Instantiation with a constructor-->
+    <bean name="xmlHelloService" class="com.endava.spring.fallwinter2013.beans.xml.XmlHelloService"/>
+
+    <!--Instantiation with a static factory method-->
+    <bean name="clientService" class="com.endava.spring.fallwinter2013.beans.xml.ClientService"
+          factory-method="createInstance"/>
+
+    <!--Instantiation using an instance factory method-->
+    <bean id="serviceLocator"
+          class="com.endava.spring.fallwinter2013.beans.xml.DefaultServiceLocator"> <!-- inject any dependencies required by this locator bean -->
+    </bean>
+    <!-- the bean to be created via the factory bean -->
+    <bean id="producerService" factory-bean="serviceLocator" factory-method="createProducerServiceInstance"/>
 </beans>
