@@ -20,4 +20,28 @@
     </bean>
     <!-- the bean to be created via the factory bean -->
     <bean id="producerService" factory-bean="serviceLocator" factory-method="createProducerServiceInstance"/>
+
+
+    <!--di-->
+    <bean id="simpleMovieLister" class="com.endava.spring.fallwinter2013.beans.xml.di.SimpleMovieLister">
+        <constructor-arg ref="movieFinder"/>
+    </bean>
+
+    <bean id="movieFinder" class="com.endava.spring.fallwinter2013.beans.xml.di.MovieFinder"/>
+
+
+    <bean id="exampleBean" class="com.endava.spring.fallwinter2013.beans.xml.di.ExampleBean">
+        <constructor-arg type="int" value="7500000"/>
+        <constructor-arg type="java.lang.String" value="42"/>
+    </bean>
+
+    <!--<bean id="exampleBean" class="com.endava.spring.fallwinter2013.beans.xml.di.ExampleBean">-->
+    <!--<constructor-arg index="0" value="7500000"/>-->
+    <!--<constructor-arg index="1" value="42"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="exampleBean" class="com.endava.spring.fallwinter2013.beans.xml.di.ExampleBean">-->
+    <!--<constructor-arg name="years" value="7500000"/>-->
+    <!--<constructor-arg name="ultimateAnswer" value="42"/>-->
+    <!--</bean>-->
 </beans>

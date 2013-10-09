@@ -1,6 +1,8 @@
 package com.endava.spring.fallwinter2013.beans.xml
         ;
 
+import com.endava.spring.fallwinter2013.beans.xml.di.ExampleBean;
+import com.endava.spring.fallwinter2013.beans.xml.di.SimpleMovieLister;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -27,5 +29,15 @@ public class AppMain {
 
         DefaultServiceLocator serviceLocator = context.getBean(DefaultServiceLocator.class);
         System.out.println(serviceLocator);
+
+
+//        di
+        SimpleMovieLister simpleMovieLister = (SimpleMovieLister) context.getBean("simpleMovieLister");
+        System.out.println(simpleMovieLister);
+
+
+        ExampleBean exampleBean = context.getBean(ExampleBean.class);
+        System.out.println(exampleBean);
+
     }
 }
