@@ -1,8 +1,9 @@
 package com.endava.spring.fallwinter2013.beans.java;
 
-import com.endava.spring.fallwinter2013.beans.java.config.MainConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.endava.spring.fallwinter2013.beans.java.config.MainConfig;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,5 +18,8 @@ public class AppMain {
 
         JavaHelloService javaHelloService = ctx.getBean(JavaHelloService.class);
         System.out.println(javaHelloService.sayHello());
+        
+        
+        ((AnnotationConfigApplicationContext) ctx).close();
     }
 }

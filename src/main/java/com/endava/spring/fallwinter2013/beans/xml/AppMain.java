@@ -38,6 +38,8 @@ public class AppMain {
 
         ExampleBean exampleBean = context.getBean(ExampleBean.class);
         System.out.println(exampleBean);
+        
+        ((ClassPathXmlApplicationContext) context).close();
 
     }
 }

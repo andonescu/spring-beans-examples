@@ -11,6 +11,7 @@ public class DefaultServiceLocator {
     private static ProducerService producerService = new ProducerServiceImpl();
 
     private DefaultServiceLocator() {
+//    	throw new AssertionError(); 
     }
 
     public ProducerService createProducerServiceInstance() {
